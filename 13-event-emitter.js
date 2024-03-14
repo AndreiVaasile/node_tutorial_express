@@ -2,13 +2,13 @@ const EventEmitter = require('events');
 
 const customEmitter = new EventEmitter();
 
-customEmitter.on('response',()=>{
-    console.log(`data received1 `);
+customEmitter.on('response',(name,id)=>{
+    console.log(`data received1 + ${name} + ${id}`);
 })
 customEmitter.on('response',()=>{
     console.log(`data recevied2 `);
 })
 
 
-customEmitter.emit('response');
+customEmitter.emit('response','john',34);
 
